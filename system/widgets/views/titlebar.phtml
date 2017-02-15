@@ -1,0 +1,127 @@
+<?php
+$url = new Setting();
+if (isset($siteInfo) && sizeof($siteInfo) > 0):
+    foreach ($siteInfo as $si):
+
+        $var = $si['icon_dir'] . $si['favicon'];
+        ?>
+
+        <nav
+            class="navbar navbar-default navbar-fixed-top navbar-<?php if (isset($inverse)) echo 'inverse'; else echo ''; ?>">
+            <div class="header">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand" href="<?php echo $si['default_home']; ?>"
+                           style="padding-top:0px; padding-bottom: 5px">
+                            <img src="<?php echo $var; ?>" style="width:60px; height: 50px;"
+                                 alt="<?php echo $si['name']; ?>">
+                        </a>
+
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <?php if (isset($menu) && sizeof($menu) > 0): ?>
+
+                            <ul class="nav navbar-nav">
+
+                                <?php foreach ($menu as $item): ?>
+
+                                    <?php
+
+                                    $style = '';
+
+                                    if (View::getViewId() && $item['id'] == View::getViewId()) {
+                                        $style = 'active';
+                                    }
+                                    ?>
+
+                                    <li class="<?php echo $style ?>">
+                                        <a href="<?php echo $item['url'] ?> ">
+                                            <span
+                                                class="fa fa-<?php echo $item['icon'] ?> <?php if (isset($inverse)) echo 'icon-white'; else echo ''; ?>"></span>
+                                            <?php echo $item['title'] ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                        <?php endif; ?>
+
+                        <ul class="nav navbar-nav navbar-right form-inline">
+
+                            <?php if (Session::get('auth')): ?>
+
+                            <li>
+                                <a href="<?php echo $url->checkedadd(); ?>user/profile/<?php echo Session::get('username'); ?>">
+                                    <span class="fa fa-user" aria-hidden="true"></span>
+                                    <?php echo Session::get('f_name'); ?>
+                                </a>
+                            </li>
+                            <li><a href="#" class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" style="padding-left: 0px;"> &nbsp;
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="<?php echo $url->checkedadd(); ?>user/" style="padding-right: 0px;">
+                                            <span class="fa fa-home" aria-hidden="true"></span>
+                                            User panel
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $url->checkedadd(); ?>user/setting">
+                                            <span class="fa fa-gear" aria-hidden="true"></span>
+                                            Setting
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="<?php echo $url->checkedadd(); ?>user/log/out">
+                                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <?php else: ?>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <form class="navbar-form navbar-right" role="form" name="form1" method="post"
+                                  action="<?php echo $url->checkedadd(); ?>user/log/in?redirect=<?php echo $_SERVER['REQUEST_URI']; ?>">
+                                <input type="hidden" name="enviar" value="1">
+                                <div class="form-group">
+                                    <input type="text" name="username" placeholder="Username" class="form-control"
+                                           required="1">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" placeholder="Password" class="form-control"
+                                           required="1">
+                                </div>
+                                <button type="submit" class="btn btn-success">Sign in</button>
+                            </form>
+                        </div>
+
+                    <?php endif; ?>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <?php
+    endforeach;
+endif;
+?>

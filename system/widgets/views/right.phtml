@@ -1,0 +1,22 @@
+<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+    <div class="header">
+        <ul class="nav navbar sidebar-right affixed-element-top js-affixed-element-top">
+
+            <?php foreach ($menu as $m): ?>
+
+            <?php if (isset($id)): ?>
+                <?php $style = 'active'; ?>
+            <?php else: ?>
+                <?php $style = ''; ?>
+            <?php endif; ?>
+
+            <li class="<?php echo $style ?>">
+                <a href="<?php echo $m['url'] ?> ">
+                    <span class="fa fa-<?php echo $m['icon'] ?>"></span>
+                    <?php echo $m['title'] ?>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</nav>

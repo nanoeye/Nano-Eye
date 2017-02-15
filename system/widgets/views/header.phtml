@@ -1,0 +1,120 @@
+<?php
+$url = new Setting();
+if (isset($siteInfo) && sizeof($siteInfo) > 0):
+    foreach ($siteInfo as $si):
+
+        $var = $si['icon_dir'] . $si['favicon'];
+        ?>
+
+        <nav class="navbar navbar-default navbar-fixed-top js-page-header">
+            <div class="header">
+                <div class="container-fluid">
+                    <div class="col-md-2">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="<?php echo $si['default_home']; ?>"
+                               style="padding-top:0px; padding-bottom: 5px">
+                                <img src="<?php echo $var; ?>" style="width:60px; height: 50px;"
+                                     alt="<?php echo $si['name']; ?>">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="col-md-7">
+                            <form class="search-form" action="<?php echo $url->checkedadd(); ?>search" method="get"
+                                  role="search"
+                                  onkeydown="search();">
+                                <span class="input-group">
+                                    <input type="search" name="q" class="form-control input-lg"
+                                           placeholder="Type any word to search.."
+                                           value="<?php
+                                           if (!empty(isset($q))):
+                                               echo $q;
+                                           else:
+                                               if (!empty(isset($data['word']))):
+                                                   echo $data['word'];
+                                               endif;
+                                           endif;
+                                           ?>" aria-describedby="basic-addon2">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary input-lg">
+                                            <span class="glyphicon glyphicon-search">
+                                                <span class="sr-only">Search...</span>
+                                            </span>
+                                        </button>
+                                    </span>
+                                </span>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="navbar-right">
+                                <span class="btn-group-lg">
+
+                                    <span class="btn btn-lg">
+                                        <a href="<?php echo $url->checkedadd(); ?>app">
+                                            <span class="glyphicon glyphicon-th-large">
+                                                <span class="sr-only"> App Icon </span>
+                                            </span>
+                                        </a>
+                                    </span>
+                                    <!--<span type="button" class="btn btn-lg js-popover" data-container="body"
+                                          data-toggle="popover" data-placement="bottom" data-content="View all apps."
+                                          data-original-title="" title="Apps">
+                                        <span class="fa fa-th-large">
+                                            <span class="sr-only"> Apps Icon </span>
+                                        </span>
+                                    </span>-->
+
+                                    &nbsp;
+                                    <?php if (Session::get('auth')): ?>
+
+                                    <span class="btn  btn-lg" data-toggle="tooltip" data-placement="bottom"
+                                          title="<?php echo Session::get('name'); ?>">
+                                            <a href="<?php echo $url->checkedadd(); ?>user/profile/<?php echo Session::get('username'); ?>"
+                                               style="padding-right: 0px;">
+                                                <span class="fa fa-user">
+                                                    <span class="text-left">
+            <?php echo Session::get('f_name'); ?>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </span>
+                                    </span>
+
+                                <?php else: ?>
+
+                                    <span class="btn btn-lg">
+                                        <a href="<?php echo $url->checkedadd(); ?>user/log/in?redirect=<?php echo $_SERVER['REQUEST_URI']; ?>">
+
+                                            <span class="glyphicon glyphicon-user">
+                                                <span class="sr-only"> User Icon </span>
+                                            </span>
+                                        </a>
+                                    </span>
+
+                                <?php endif; ?>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/nav-collapse -->
+
+            </div>
+        </nav>
+
+        <?php
+    endforeach;
+endif;
+?>
+
+
