@@ -1,0 +1,120 @@
+body
+{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: inherit;
+    min-width: 475px ;
+}
+
+.row
+{
+    width: 90%;
+}
+
+.jumbotron
+{
+    padding-bottom:0px;
+    padding-left: 25px;
+    margin-top:0px;
+    margin-bottom:0px;
+    border-bottom: 2px solid #265a88;
+}
+
+.jumbotron a:hover
+{
+    text-decoration: none;
+}
+
+.jumbotron h1
+{
+    margin-bottom:0px;
+}
+
+.logo
+{
+    position:relative;
+    float:left;
+    padding:9px 10px;
+    margin-top:8px;
+    margin-right:15px;
+    margin-bottom:8px;
+    background-color:transparent;
+    background-image:none;
+    border:1px solid;
+    border-radius:50px;
+    width: 100px;
+    height: 100px;
+}
+
+.breadcrumb
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom:0px;
+    border-bottom: 2px solid #265a88;
+    border-left: 2px solid #265a88;
+    border-right: 2px solid #265a88;
+    display: block;
+}
+
+.content
+{
+    margin: 0 auto;
+    width: 70%;
+    padding-top: 10px;
+    margin-top: 0px;
+}
+
+.content h3
+{
+    padding-top: 0px;
+}
+
+.aln-left
+{
+    float: left;
+}
+
+.aln-right
+{
+    float: right;
+}
+
+.nav-custom
+{
+    margin-top: 5px;
+    padding-top: 0px;
+}
+
+
+.word-icon
+{
+    width: 140px;
+    height: 100px;
+}
+
+.navbar{
+height: 20px;
+}
+.container
+{
+    padding-top: 55px;
+    background-color: white;
+    border-radius: 20px;
+    border-bottom: 5px solid;
+    border-bottom-color: #adadad;
+    border-bottom-right-radius: 20px;
+    border-right: 5px solid;
+    border-right-color: #adadad;
+}
+
+.bg-primary
+{
+    color:#fff;
+    background-color:#337ab7
+}
+
+.table
+{
+    border-top: none;
+}

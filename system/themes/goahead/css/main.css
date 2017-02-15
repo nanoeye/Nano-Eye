@@ -1,0 +1,96 @@
+body{
+    color: black;
+    padding-top: 12%;
+}
+
+#newtab-search-form {
+    display: -moz-box;
+    position: relative;
+    width: 632px;
+    height: 40px;
+    -moz-box-flex: 1;
+    max-width: 1000px;
+}
+
+#newtab-search-icon {
+    border: 1px transparent;
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    background: url("chrome://browser/skin/search-indicator-magnifying-glass.svg") center center no-repeat;
+    position: absolute;
+}
+
+.newtab-search-text {
+    -moz-box-flex: 1;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 34px;
+    padding-right: 8px;
+    background: hsla(0,0%,100%,.9) padding-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border: 1px solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: -moz-use-text-color;
+    border-right-color: -moz-use-text-color;
+    border-bottom-color: -moz-use-text-color;
+    border-left-color: -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image-source: none;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-width: 1 1 1 1;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-spacing: 0;
+    border-radius: 2px 0 0 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
+    border-top-color: rgba(23, 51, 78, 0.15);
+    border-right-color: rgba(23, 51, 78, 0.17);
+    border-bottom-color: rgba(23, 51, 78, 0.2);
+    border-left-color: rgba(23, 51, 78, 0.17);
+    box-shadow: 0 1px 0 hsla(210,65%,9%,.02) inset, 0 0 2px hsla(210,65%,9%,.1) inset, 0 1px 0 hsla(0,0%,100%,.2);
+    color: inherit;
+}
+
+#newtab-search-submit {
+    -moz-margin-start: -1px;
+    background: url("chrome://browser/skin/search-arrow-go.svg#search-arrow-go") center center no-repeat, linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
+    padding: 0;
+    border: 1px solid;
+    border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
+    border-radius: 0 2px 2px 0;
+    -moz-border-start: 1px solid transparent;
+    box-shadow: 0 0 2px hsla(0,0%,100%,.5) inset, 0 1px 0 hsla(0,0%,100%,.2);
+    color: inherit;
+    cursor: pointer;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    width: 50px;
+}
+
+.text-normal{
+    font-family: "Times New Roman, Arial";
+    font-size: 16px;
+}
