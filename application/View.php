@@ -1,6 +1,5 @@
 <?php
 
-/*require_once ROOT . 'system' . DS . 'libs' . DS . 'smarty' . DS . 'Smarty.class.php';*/
 require_once ROOT . 'system' . DS . 'libs' . DS . 'smarty' . DS . 'SmartyBC.class.php';
 
 class View extends SmartyBC
@@ -48,7 +47,6 @@ class View extends SmartyBC
             self::$item = $item;
         }
         
-        /*$smarty = new SmartyBC();*/
         $this->template_dir = ROOT . 'system' . DS . 'themes' . DS . $this->template . DS;
         $this->config_dir = ROOT . 'system' . DS . 'themes' . DS . $this->template . DS. 'configs' . DS;
         $this->cache_dir = ROOT . 'tmp' . DS . 'cache' . DS;
