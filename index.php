@@ -1,6 +1,5 @@
 <?php
 
-
 ini_set('display_errors', 1);
 
 define('DS', DIRECTORY_SEPARATOR);
@@ -11,7 +10,6 @@ try
 {
     require_once APP_PATH . 'Autoload.php';
     require_once APP_PATH . 'Configs.php';
-
 
     Session::init();
 
